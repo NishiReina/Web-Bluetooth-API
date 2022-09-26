@@ -14,6 +14,7 @@ function startDeviceScanner() {
 
                 /* Display device data */
                 let deviceData = event.device;
+                console.log("check01");
                 console.log(deviceData);
 
                 if (document.getElementById(deviceData.id)) {
