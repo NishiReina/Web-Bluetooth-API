@@ -14,10 +14,12 @@ function startDeviceScanner() {
 
                 /* Display device data */
                 let deviceData = event.device;
+                console.log(deviceData);
 
                 if (document.getElementById(deviceData.id)) {
                     //update the device data displayed
                     updataDeviceData(deviceData);
+                    
 
                 } else {
                     //insert device data
