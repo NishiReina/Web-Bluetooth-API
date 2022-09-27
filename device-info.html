@@ -14,12 +14,12 @@
     <input id="service" type="text" size=17 list="services" placeholder="Bluetooth Service">
     <input id="name" type="text" size=17 placeholder="Device Name">
     <input id="namePrefix" type="text" size=17 placeholder="Device Name Prefix">
-    <button>Get Bluetooth Device Info</button>
+    <button onclick="startDeviceScanner()" >Get Bluetooth Device Info</button>
   </form>
   <script type="text/javadcript" src="device-info.js"></script>
 </body>
 </html>
-<script>
+<!-- <script>
   log = ChromeSamples.log;
 
   function isWebBluetoothEnabled() {
@@ -31,7 +31,7 @@
       return false;
     }
   }
-  
+
   document.querySelector('form').addEventListener('submit', function(event) {
     event.stopPropagation();
     event.preventDefault();
@@ -42,5 +42,5 @@
     }
   });
 
-</script>
+</script> -->
 
