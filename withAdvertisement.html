@@ -141,10 +141,10 @@ href="watch-advertisements-async-await.html">Watch Advertisements (Async Await)<
   log('Requesting any Bluetooth device...');
   navigator.bluetooth.requestDevice({
 // filters: [...] <- Prefer filters to save energy & show relevant devices.
-    // acceptAllDevices: true,
-    filters: [
-    { services: ["0000b81d-0000-1000-8000-00805f9b34fb"] }
-    ]
+    acceptAllDevices: true,
+    // filters: [
+    // { services: ["0000b81d-0000-1000-8000-00805f9b34fb"] }
+    // ]
   })
   .then(device => {
     log('> Requested ' + device.name);
