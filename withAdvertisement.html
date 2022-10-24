@@ -137,14 +137,16 @@ href="watch-advertisements-async-await.html">Watch Advertisements (Async Await)<
 
   
     
-<script>function onWatchAdvertisementsButtonClick() {
+<script>
+
+function onWatchAdvertisementsButtonClick() {
   log('Requesting any Bluetooth device...');
   navigator.bluetooth.requestDevice({
 // filters: [...] <- Prefer filters to save energy & show relevant devices.
-    acceptAllDevices: true,
-    // filters: [
-    // { services: ["0000b81d-0000-1000-8000-00805f9b34fb"] }
-    // ]
+    // acceptAllDevices: true,
+    filters: [
+    { services: ["0000b81d-0000-1000-8000-00805f9b34fb"] }
+    ]
   })
   .then(device => {
     log('> Requested ' + device.name);
@@ -162,6 +164,10 @@ href="watch-advertisements-async-await.html">Watch Advertisements (Async Await)<
       event.serviceData.forEach((valueDataView, key) => {
         logDataView('Service', key, valueDataView);
       });
+      // 追加
+      value = event.serviceData.get("0000b81d-0000-1000-8000-00805f9b34fb");
+      str = String.fromCharCode.apply(null, new Uint8Array(value.buffer));
+      console.log(str);
     });
 
     log('Watching advertisements from "' + device.name + '"...');
